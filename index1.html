@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabbed Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('image.jpg');
+            font-size: 16px;
+        }
+        h1 {
+            font-size: 2em; /* Larger font size for main headings */
+        }
+
+        .content {
+            font-size: 14px; /* Reduced font size for content */
+        }
+
+        .content h2 {
+            font-size: 1.5em; /* Font size for subheadings */
+        }
+
+        .content p {
+            line-height: 1.5; /* Adjust line height for better readability */
+        }
+
+        .content ul {
+            padding-left: 20px;
+        }
+        
+        .tabs {
+            overflow: hidden;
+            border: 1px solid  #f1f1f1;
+            background-color: #000;
+        }
+
+        .tab-links {
+            display: flex;
+        }
+
+        .tab-links a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color:#f1f1f1;
+            display: block;
+            border-right: 1px solid #000;
+            transition: background-color 0.3s;
+        }
+
+        .tab-links a:hover {
+            background-color: #808080;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body >
+    
+    <div class="tabs">
+        <div class="tab-links">
+            <a href="#" onclick="openTab(event, 'dashboard')">About us</a>
+            <a href="#" onclick="openTab(event, 'settings')">Settings</a>
+            <a href="#" onclick="openTab(event, 'maintenance')">Maintenance</a>
+            <a href="#" onclick="openTab(event, 'map')">Map</a>
+        </div>
+           <hr>
+        <div id="dashboard" class="tab-content active">
+                 
+            <h2 style="color:#ffffff">  
+                
+                
+                    <div class="outside-tab-content">
+                   
+                <section class="content">
+                    <h2>Welcome to SS Lights</h2>
+                    <p>Where innovation meets illumination! We have a cutting-edge technology app at the forefront of revolutionizing street lighting through the power of the Internet of Things (IoT). Our mission is to transform urban landscapes, making them smarter, more energy-efficient, and safer through intelligent lighting solutions.</p>
+        
+                    <h2>Who We Are</h2>
+                    <p>At SS Lights, we are a passionate team dedicated to creating sustainable and intelligent lighting solutions for modern cities. With a deep commitment to environmental responsibility, we believe in harnessing the power of technology to create brighter, safer, and more connected communities.</p>
+        
+                    <h2>Our Vision</h2>
+                    <p>We envision a future where every street is lit with precision and purpose. Through our IoT-based street lighting solutions, we aim to create environments that are not only energy-efficient but also responsive to the dynamic needs of urban life. Our vision extends beyond mere illumination – we strive to build smart cities that prioritize sustainability, safety, and a higher quality of life for all.</p>
+        
+                    <h2>What Sets Us Apart</h2>
+                    <ul>
+                        <li><strong>IoT Integration:</strong> Our street lighting systems are not just lights; they are intelligent nodes connected through the IoT. This connectivity allows for real-time monitoring, data analysis, and adaptive control, ensuring optimal lighting conditions at all times.</li>
+                        <li><strong>Energy Efficiency:</strong> We are committed to reducing energy consumption and carbon footprints. Our smart lighting solutions are designed to dynamically adjust brightness based on environmental factors, time of day, and traffic patterns, leading to significant energy savings.</li>
+                        <li><strong>Scalability and Flexibility:</strong> Whether it's a small residential street or a bustling urban avenue, our solutions are scalable to fit the unique needs of any environment. With flexibility in deployment, our systems adapt seamlessly to the evolving infrastructure of smart cities.</li>
+                    </ul>
+        
+                    <h2>Our Commitment</h2>
+                    <p>At SS Lights, we are lighting the way to a smarter, greener future. Our commitment extends beyond technology to fostering sustainable partnerships, empowering communities, and contributing to a global shift towards intelligent urban living.</p>
+        
+                    <p>Join us in redefining the future of street lighting – where innovation meets the glow of progress.</p>
+                </section>
+            </div></h2>
+        </div>
+
+        <div id="settings" class="tab-content">
+            <p style="color:#ffffff">Thank you! </p>
+            <button onclick="logout()" style="background-color: lightblue;">Log Out</button>
+        </div>
+
+        <div id="maintenance" class="tab-content">
+            <button onclick="logout()" style="background-color: lightblue;"> <h2 style="color:#ffffff"><a href="maintenance.html" >Light status</a></h2>
+         </button> 
+        </div>
+
+        <div id="map" class="tab-content">
+            <button onclick style="background-color: lightblue;"><h2 style="color:#ffffff"><a href="https://www.google.com/maps?q=Lucknow" target="_blank">Location</a></h2>
+            </button> 
+        </div>
+    </div>
+
+    <script>
+        function openTab(event, tabName) {
+            var i, tabContent, tabLinks;
+            
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            
+            tabLinks = document.getElementsByClassName("tab-links");
+            for (i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+            }
+            
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.className += " active";
+        }
+        function logout() {
+            window.location.href = 'index.html'; 
+        }
+    </script>
+    </script>
+
+</body>
+</html>
